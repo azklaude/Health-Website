@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rawat — Screening kesehatan edukatif</title>
+<meta name="description" content="Screening kesehatan sederhana untuk memahami beberapa faktor kesehatan sehari-hari. Edukatif, bukan diagnosis.">
+<meta name="theme-color" content="#FBFAF7">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23E8D8CB'/%3E%3Cpath d='M5 17h6l3-7 4 11 3-8 2 4h4' fill='none' stroke='%23A66F4F' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Lewati ke konten</a>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="#home" data-brand>Rawat</a>
+    <nav id="nav" aria-label="Navigasi utama">
+      <a href="#check"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4h6v3H9zM7 6H5v14h14V6h-2M9 14l2 2 4-4"/></svg><span>Checkup</span></a>
+      <a href="#tools"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h2m4 0h2M8 16h2m4 0h2"/></svg><span>Kalkulator</span></a>
+      <a href="#doctor"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v10H10l-4 4v-4H5z"/><path d="M12 8v4M10 10h4"/></svg><span>AI Doctor</span></a>
+      <a href="#insight"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3 11c.6.5 1 1.2 1 2h4c0-.8.4-1.5 1-2a6 6 0 0 0-3-11z"/></svg><span>Insight</span></a>
+      <a href="#about"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><span>About</span></a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section id="home" data-view>
+    <div class="wrap hero">
+      <div class="hero-copy">
+        <h1 tabindex="-1">Kenali tubuhmu, satu langkah kecil pada satu waktu.</h1>
+        <p class="lead">Jawab beberapa pertanyaan singkat, lihat gambaran kebiasaan dan angka kesehatanmu, lalu dapatkan saran yang bisa langsung dicoba.</p>
+        <div class="row">
+          <a class="btn" href="#check">Mulai Health Check</a>
+          <a class="btn ghost" href="#tools">Lihat Kalkulator</a>
+        </div>
+        <p class="note">Edukatif, tanpa akun. Datamu hanya tersimpan di perangkat ini.</p>
+      </div>
+      <svg class="orbit" viewBox="0 0 320 320" role="img" aria-label="Ilustrasi abstrak: lingkaran dengan garis denyut, jantung, daun, dan tetes air">
+        <circle cx="160" cy="160" r="140" fill="none" stroke="#E8D8CB" stroke-width="1.5"/>
+        <circle cx="160" cy="160" r="98" fill="#F8F3EA"/>
+        <path d="M160 130c-9-14-31-9-31 8 0 15 22 27 31 36 9-9 31-21 31-36 0-17-22-22-31-8z" fill="#E8D8CB"/>
+        <path class="pulse" d="M66 170h54l14-38 26 78 20-54 14 14h60" fill="none" stroke="#A66F4F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="160" cy="20" r="13" fill="#B38A4A" opacity=".85"/>
+        <path d="M290 112c-22 4-32 19-30 40 22-2 32-17 30-40z" fill="#64826A"/>
+        <path d="M44 214c-10 14-14 23-8 31a13 13 0 0 0 22 0c6-8 2-17-8-31z" fill="#687A8A" opacity=".85"/>
+      </svg>
+    </div>
+
+    <div class="wrap">
+      <h2>Tiga langkah, beberapa menit</h2>
+      <ol class="steps">
+        <li><b>Jawab pertanyaan singkat.</b> Lima bagian, sebagian opsional.</li>
+        <li><b>Lihat snapshot-mu.</b> Skor, hal yang sudah baik, dan hal yang perlu diperhatikan.</li>
+        <li><b>Jelajahi alat lain.</b> BMI, tekanan darah, skrining risiko, dan asisten keluhan.</li>
+      </ol>
+    </div>
+
+    <div class="wrap">
+      <h2>Alat kesehatan</h2>
+      <ul class="toollist" id="toolGrid"></ul>
+    </div>
+
+    <div class="wrap">
+      <aside class="emerg" aria-label="Informasi darurat">
+        <div>
+          <h2>Sedang mengalami kondisi darurat?</h2>
+          <p>Jangan tunggu hasil dari website ini. Segera cari pertolongan medis.</p>
+        </div>
+        <p class="emerg-no">Darurat medis: <b data-emerg>119</b></p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="check" data-view hidden>
+    <div class="wrap narrow"><div id="checkBody"></div></div>
+  </section>
+
+  <section id="tools" data-view hidden>
+    <div class="wrap narrow">
+      <h1 tabindex="-1">Kalkulator</h1>
+      <p class="lead">Hitung, baca artinya, lalu lihat langkah berikutnya. Semua angka berbagi data yang sama.</p>
+      <div class="tabs" id="toolTabs"></div>
+      <div id="toolBody"></div>
+    </div>
+  </section>
+
+  <section id="doctor" data-view hidden>
+    <div class="wrap narrow">
+      <h1 tabindex="-1">AI Doctor</h1>
+      <p class="lead">Asisten kesehatan berbasis aturan. Jawabannya dibuat dari aturan edukasi yang sudah ditentukan dan bukan penilaian dokter.</p>
+      <div id="chat" class="chat" role="log" aria-live="polite"></div>
+      <div id="chatOpts" class="chips"></div>
+      <form id="chatForm" class="chatform" autocomplete="off">
+        <label class="sr" for="chatIn">Tulis keluhanmu</label>
+        <input id="chatIn" type="text" maxlength="120" placeholder="Tulis keluhanmu, misalnya: saya pusing">
+        <button class="btn" type="submit">Kirim</button>
+      </form>
+      <p class="note">Rule-based health assistant: jawaban dibuat dari aturan edukasi, bukan penilaian dokter. Darurat medis: <b data-emerg>119</b>.</p>
+    </div>
+  </section>
+
+  <section id="insight" data-view hidden>
+    <div class="wrap narrow">
+      <h1 tabindex="-1">Insight</h1>
+      <p class="lead">Bacaan singkat tentang kebiasaan sehari-hari, dengan satu langkah kecil di tiap topik.</p>
+      <div id="insightList"></div>
+      <h2>Riwayat di perangkat ini</h2>
+      <div id="historyBody"></div>
+    </div>
+  </section>
+
+  <section id="about" data-view hidden>
+    <div class="wrap narrow">
+      <h1 tabindex="-1">Metodologi</h1>
+      <p class="lead">Perhitungan, klasifikasi, skrining, dan diagnosis adalah empat hal yang berbeda. Website ini hanya mencakup tiga yang pertama.</p>
+      <dl class="defs">
+        <dt>Perhitungan</dt><dd>Operasi matematika, misalnya BMI = berat (kg) ÷ tinggi (m)².</dd>
+        <dt>Klasifikasi</dt><dd>Menafsirkan angka dengan ambang batas. BMI dewasa (20+): &lt;18,5 kurang, 18,5–&lt;25 sehat, 25–&lt;30 berlebih, ≥30 obesitas. Tekanan darah dewasa (18+): normal &lt;120 dan &lt;80; elevated 120–129 dan &lt;80; tahap 1 130–139 atau 80–89; tahap 2 ≥140 atau ≥90; di atas 180 atau 120 dianggap sangat tinggi.</dd>
+        <dt>Skrining</dt><dd>Memeriksa apakah beberapa faktor risiko ada. Skor di sini dibuat untuk edukasi, transparan, dan belum divalidasi secara klinis.</dd>
+        <dt>Diagnosis</dt><dd>Keputusan medis oleh tenaga kesehatan yang berwenang. Satu pengukuran saja belum cukup untuk menegakkannya.</dd>
+      </dl>
+      <h2>Rujukan</h2>
+      <p>Ambang BMI dan penjelasan skrining diadaptasi dari CDC dan WHO. Kategori tekanan darah dewasa mengikuti American Heart Association. Informasi layanan darurat 119 merujuk pada Kementerian Kesehatan RI. Periksa sumber resmi untuk panduan terbaru.</p>
+      <h2>Privasi</h2>
+      <ul class="plain">
+        <li>Tanpa akun dan tanpa server.</li>
+        <li>Tidak ada data kesehatan yang dikirim ke mana pun.</li>
+        <li>Data tersimpan di penyimpanan browser perangkat ini dan bisa kamu hapus kapan saja.</li>
+      </ul>
+      <h2>Tentang Website</h2>
+      <p>Dibuat untuk Tugas Informatika. Kelompok: <span data-cfg="teamName"></span>. Kelas: <span data-cfg="className"></span>. Sekolah: <span data-cfg="schoolName"></span>. Tahun ajaran: <span data-cfg="academicYear"></span>.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p><b data-brand>Rawat</b> <span data-tagline></span></p>
+    <p class="note">Website ini dibuat untuk tujuan edukasi dan screening awal. Hasil yang ditampilkan bukan diagnosis medis dan tidak menggantikan konsultasi dengan dokter atau tenaga kesehatan. Satu pengukuran belum tentu menegakkan diagnosis.</p>
+    <p class="note">Darurat medis: <b data-emerg>119</b>. Data tersimpan hanya di perangkat ini. Built for Informatics Project.</p>
+  </div>
+</footer>
+
+<dialog id="modal"></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>

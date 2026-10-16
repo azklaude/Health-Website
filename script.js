@@ -1,6 +1,6 @@
 "use strict";
 /* ===== Konfigurasi (ubah di sini) ===== */
-const siteConfig = { name: "Rawat", shortName: "RAWAT", tagline: "Kenali tubuhmu, satu langkah kecil pada satu waktu.", description: "Screening kesehatan edukatif", version: "1.0.0", language: "id-ID", emergencyNumber: "119" };
+const siteConfig = { name: "Sehatin", shortName: "SEHATIN", tagline: "Kenali tubuhmu, satu langkah kecil pada satu waktu.", description: "Screening kesehatan edukatif", version: "1.0.0", language: "id-ID", emergencyNumber: "119" };
 const projectConfig = { siteName: siteConfig.name, className: "XI-F1", schoolName: "MAN 2 KLATEN", teamName: "1", academicYear: "2026/2027", emergencyNumber: siteConfig.emergencyNumber };
 
 /* ===== Util ===== */
